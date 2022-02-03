@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+@import "abstracts/variables"; // 'abstracts/functions',
+// 'abstracts/mixins';
+
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+
+img,
+video {
+  display: block;
+}
