@@ -1,0 +1,46 @@
+/**
+    인자 값을 받아 url()을 반환한다. background 속성에 사용될 수 있다.
+
+    @param $base - 베이스 경로
+    @param $path - 세부 경로
+    @param $name - 파일명
+    @return - url() 값
+*/
+@function asset($base, $path, $name) {
+  @return url($base + $path + $name);
+}
+
+/**
+    /assets/images 하위 경로에 위치한 파일에 접근하는데 편의를 높이기 위함
+    베이스 경로가 미리 설정됨
+    
+    @param $path - 세부 경로
+    @param $name - 파일명
+    @return - url() 값
+*/
+@function asset-image($path, $name) {
+  $base: "~images/";
+  @return asset($base, $path, $name);
+}
+
+/**
+    /update 하위 경로에 위치한 파일에 접근하는데 편의를 높이기 위함
+    베이스 경로가 미리 설정됨
+    
+    @param $path - 세부 경로
+    @param $name - 파일명
+    @return - url() 값
+*/
+@function update-image($path, $name) {
+  $base: "/update";
+  @return asset($base, $path, $name);
+}
+
+// opactiy
+@function set-color($color, $opacity) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  @return rgba($red, $green, $blue, $opacity);
+}
